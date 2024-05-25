@@ -10,9 +10,12 @@ from itertools import accumulate, combinations, permutations, product
 from sortedcontainers import SortedSet, SortedList, SortedDict
 mod = 998244353
 
-n, x, y, z = map(int, input().split())
+n = int(input())
+process = []
+for _ in range(n):
+    l, r = map(int, input().split())
+    process.append((l, 's'))
+    process.append((r, 'e'))
+    
+process.sort(key=lambda x: (x[0], x[1] == 'e'))
 
-if x < z < y or y < z < x:
-  print("Yes")
-else:
-  print("No")
